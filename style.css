@@ -35,6 +35,12 @@ body {
     text-decoration: none;
 }
 
+.nav-left img {
+    height: 34px;
+    width: auto;
+    margin-right: 10px;
+}
+
 .nav-left a.logo-link .bot-name {
     color: white;
     font-size: 20px;
@@ -126,6 +132,43 @@ body {
     padding: 2px 4px;
     border-radius: 4px;
     font-family: monospace;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .nav-right {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: #5865f2;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-right a {
+        margin: 12px 0;
+        font-size: 18px;
+    }
+
+    .nav-right.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 footer {
