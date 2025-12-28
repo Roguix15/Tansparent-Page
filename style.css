@@ -5,17 +5,6 @@ body {
     color: #333;
 }
 
-header, footer {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #007bff;
-}
-
 .navbar {
     background-color: #5865f2;
     height: 70px;
@@ -24,6 +13,8 @@ nav a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .nav-left {
@@ -59,4 +50,9 @@ nav a {
     margin: 30px auto;
     padding: 20px;
     text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
 }
