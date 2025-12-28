@@ -1,8 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    margin: 0;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -54,4 +52,11 @@ nav a {
 
 .nav-right a:hover {
     text-decoration: underline;
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
 }
