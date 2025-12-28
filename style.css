@@ -29,15 +29,16 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.nav-left {
+.nav-left a.logo-link {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
-.nav-left img {
-    height: 40px;
-    width: 40px;
-    margin-right: 12px;
+.nav-left a.logo-link .bot-name {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .bot-name {
