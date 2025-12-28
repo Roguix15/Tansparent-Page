@@ -10,9 +10,8 @@
     font-weight: 700;
 }
 
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'NormalFont', sans-serif;
     margin: 0;
     background-color: #f4f4f4;
     color: #333;
@@ -42,6 +41,7 @@ body {
 }
 
 .bot-name {
+    font-family: 'BigTitleFont', sans-serif;
     color: white;
     font-size: 20px;
     font-weight: bold;
