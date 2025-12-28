@@ -72,11 +72,8 @@ body {
     align-items: flex-start;
 }
 
+/* Panel lateral izquierdo */
 .commands-left {
-    flex: 3;
-}
-
-.commands-right {
     flex: 1;
     position: sticky;
     top: 80px; /* ajusta según altura del navbar */
@@ -87,25 +84,29 @@ body {
     overflow-y: auto;
 }
 
-.commands-right h3 {
+.commands-left h3 {
     margin-top: 0;
 }
 
-.commands-right ul {
+.commands-left ul {
     list-style: none;
     padding-left: 0;
 }
 
-.commands-right ul li a {
+.commands-left ul li a {
     text-decoration: none;
     color: #5865f2;
 }
 
-.commands-right ul li a:hover {
+.commands-left ul li a:hover {
     text-decoration: underline;
 }
 
-/* Comandos */
+/* Contenido de los comandos a la derecha */
+.commands-right {
+    flex: 3;
+}
+
 .command {
     margin-bottom: 30px;
     text-align: left;
