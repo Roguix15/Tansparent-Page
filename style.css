@@ -66,6 +66,67 @@ body {
     text-align: center;
 }
 
+.commands-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.commands-left {
+    flex: 3;
+}
+
+.commands-right {
+    flex: 1;
+    position: sticky;
+    top: 80px; /* ajusta según altura del navbar */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.commands-right h3 {
+    margin-top: 0;
+}
+
+.commands-right ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.commands-right ul li a {
+    text-decoration: none;
+    color: #5865f2;
+}
+
+.commands-right ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Comandos */
+.command {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.command h2 {
+    margin-bottom: 10px;
+    font-family: 'BigTitleFont', sans-serif;
+}
+
+.command p {
+    margin: 4px 0;
+}
+
+.command code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
 footer {
     text-align: center;
     margin-bottom: 20px;
