@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'NormalFont';
+    src: url('assets/fonts/normal.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'BigTitleFont';
+    src: url('assets/fonts/big_title.ttf') format('truetype');
+    font-weight: 700;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
