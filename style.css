@@ -74,64 +74,58 @@ body {
 
 .commands-layout {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     align-items: flex-start;
 }
 
-/* Panel de navegación a la izquierda */
-.commands-left {
-    flex: 1;
+/* Panel izquierdo */
+.commands-nav {
+    width: 200px;
     position: sticky;
-    top: 80px; /* ajusta según altura del navbar */
+    top: 90px;
+    align-self: flex-start;
+
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 10px;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
 }
 
-.commands-left h3 {
+.commands-nav h3 {
     margin-top: 0;
 }
 
-.commands-left ul {
+.commands-nav ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
-.commands-left ul li a {
+.commands-nav li {
+    margin-bottom: 8px;
+}
+
+.commands-nav a {
     text-decoration: none;
     color: #5865f2;
+    font-weight: 500;
 }
 
-.commands-left ul li a:hover {
+.commands-nav a:hover {
     text-decoration: underline;
 }
 
-/* Contenido de los comandos a la derecha */
-.commands-right {
-    flex: 3;
+/* Contenido derecho (grande) */
+.commands-content {
+    flex: 1;
 }
 
+/* Comandos */
 .command {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: left;
 }
 
 .command h2 {
-    margin-bottom: 10px;
     font-family: 'BigTitleFont', sans-serif;
-}
-
-.command p {
-    margin: 4px 0;
-}
-
-.command code {
-    background-color: #eee;
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-family: monospace;
 }
 
 .menu-toggle {
@@ -144,18 +138,17 @@ body {
 }
 
 @media (max-width: 768px) {
-
-    .nav-right {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background-color: #5865f2;
+    .commands-layout {
         flex-direction: column;
-        text-align: center;
-        padding: 10px 0;
     }
+
+    .commands-nav {
+        width: 100%;
+        position: relative;
+        top: 0;
+        margin-bottom: 20px;
+    }
+}
 
     .nav-right a {
         margin: 12px 0;
