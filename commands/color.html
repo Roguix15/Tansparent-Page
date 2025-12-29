@@ -1,64 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Commands - Transparent</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="navbar">
     <div class="nav-left">
-        <a href="../index.html" class="logo-link">
-            <img src="../assets/images/white_logo.png" alt="Transparent Logo">
+        <a href="./" class="logo-link">
+            <img src="assets/images/white_logo.png" alt="Transparent Logo">
             <span class="bot-name">Transparent</span>
         </a>
     </div>
 
-    <nav class="nav-right">
-        <a href="../tos.html">Terms</a>
-        <a href="../privacy.html">Privacy</a>
-        <a href="../commands.html">Commands</a>
+    <nav class="nav-right" id="nav-menu">
+        <a href="tos.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="commands.html">Commands</a>
     </nav>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 </header>
 
-<main class="page-content commands-page">
-    <h1>Color Commands 🎨</h1>
+<div class="commands-layout">
 
-    <div class="commands-layout">
-        <!-- Izquierda: comandos -->
-        <div class="commands-left">
-            <div class="command" id="colorize">
-                <h2>!colorize</h2>
-                <p><strong>Function:</strong> Apply a color filter to an image.</p>
-                <p><strong>Parameters:</strong> color (e.g., red, blue, green)</p>
-                <p><strong>Example:</strong> <code>!colorize red</code></p>
-                <!-- Puedes añadir imagen de ejemplo -->
-                <!-- <img src="../assets/images/color_example.png" alt="Color example"> -->
-            </div>
+    <!-- Izquierda: mini panel -->
+    <aside class="commands-nav">
+        <h3>Jump to</h3>
+        <ul>
+            <li><a href="#colorize">!colorize</a></li>
+            <li><a href="#invertcolors">!invertcolors</a></li>
+        </ul>
+    </aside>
 
-            <div class="command" id="invertcolors">
-                <h2>!invertcolors</h2>
-                <p><strong>Function:</strong> Invert the colors of an image.</p>
-                <p><strong>Parameters:</strong> none</p>
-                <p><strong>Example:</strong> <code>!invertcolors</code></p>
-            </div>
+    <!-- Derecha: comandos -->
+    <section class="commands-content">
+        <div class="command" id="colorize">
+            <h2>!colorize</h2>
+            <p><strong>Function:</strong> Apply a color filter to an image.</p>
+            <p><strong>Parameters:</strong> color (e.g., red, blue, green)</p>
+            <p><strong>Example:</strong> <code>!colorize red</code></p>
         </div>
 
-        <!-- Derecha: mini panel -->
-        <div class="commands-right">
-            <h3>Jump to:</h3>
-            <ul>
-                <li><a href="#colorize">!colorize</a></li>
-                <li><a href="#invertcolors">!invertcolors</a></li>
-            </ul>
+        <div class="command" id="invertcolors">
+            <h2>!invertcolors</h2>
+            <p><strong>Function:</strong> Invert the colors of an image.</p>
+            <p><strong>Parameters:</strong> none</p>
+            <p><strong>Example:</strong> <code>!invertcolors</code></p>
         </div>
-    </div>
-</main>
+    </section>
 
-<footer>
-    <p>© 2025 Transparent</p>
-</footer>
+</div>
 
 </body>
 </html>
