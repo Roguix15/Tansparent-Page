@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Terminal, List, Play } from 'lucide-react';
+import { Terminal, List, Play, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
 const categoryColors = {
-  color_adjustments: "bg-orange-500/20 text-orange-400 border-orange-500/30",
+  color: "bg-orange-500/20 text-orange-400 border-orange-500/30",
+  adjustments_effects: "bg-purple-500/20 text-purple-400 border-purple-500/30",
   transformations: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  visual_effects: "bg-purple-500/20 text-purple-400 border-purple-500/30",
   animations: "bg-pink-500/20 text-pink-400 border-pink-500/30",
   text_overlay: "bg-green-500/20 text-green-400 border-green-500/30",
   utilities: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-  information: "bg-gray-500/20 text-gray-400 border-gray-500/30"
+  settings: "bg-gray-500/20 text-gray-400 border-gray-500/30",
+  information: "bg-slate-500/20 text-slate-400 border-slate-500/30"
 };
 
 export default function CommandCard({ command, index }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const hasDetails = command.arguments || command.instructions;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -26,18 +30,21 @@ export default function CommandCard({ command, index }) {
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-2 flex-wrap">
               <Terminal className="w-4 h-4 text-indigo-400" />
               <code className="text-white font-mono font-semibold text-base">/{command.name}</code>
+              <Badge variant="outline" className={`${categoryColors[command.category]} border text-xs`}>
+                {command.category?.replace(/_/g, ' ')}
+              </Badge>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">{command.description}</p>
           </div>
-          {command.video_url && (
+          {command.videoUrl && (
             <Button
               size="sm"
               variant="outline"
               className="border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 flex-shrink-0"
-              onClick={() => window.open(command.video_url, '_blank')}
+              onClick={() => window.open(command.videoUrl, '_blank')}
             >
               <Play className="w-3 h-3 mr-1" />
               Video
@@ -53,23 +60,61 @@ export default function CommandCard({ command, index }) {
           </div>
         )}
 
-        {/* Arguments */}
-        {command.arguments && (
-          <div className="bg-black/20 rounded-lg p-3 border border-white/5">
-            <div className="flex items-center gap-2 mb-1">
-              <List className="w-3 h-3 text-gray-500" />
-              <p className="text-gray-500 text-xs">Arguments:</p>
-            </div>
-            <p className="text-gray-400 text-xs leading-relaxed">{command.arguments}</p>
-          </div>
-        )}
+        {/* Expandable Details */}
+        {hasDetails && (
+          <>
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm transition-colors"
+            >
+              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              {isExpanded ? 'Hide details' : 'Show details'}
+            </button>
 
-        {/* Category Badge */}
-        <div className="flex items-center gap-2 flex-wrap pt-2">
-          <Badge className={`${categoryColors[command.category]} border text-xs`}>
-            {command.category?.replace(/_/g, ' ')}
-          </Badge>
-        </div>
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="space-y-3"
+              >
+                {/* Arguments */}
+                {command.arguments && (
+                  <div className="bg-black/20 rounded-lg p-3 border border-white/5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <List className="w-3 h-3 text-gray-500" />
+                      <p className="text-gray-500 text-xs font-semibold">Arguments:</p>
+                    </div>
+                    <div className="space-y-2">
+                      {command.arguments.map((arg, idx) => (
+                        <div key={idx} className="text-xs">
+                          <code className="text-indigo-300 font-mono">
+                            {arg.name}
+                            {arg.required ? ' (required)' : ' (optional)'}
+                          </code>
+                          <p className="text-gray-400 mt-1 ml-2">→ {arg.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Instructions */}
+                {command.instructions && (
+                  <div className="bg-black/20 rounded-lg p-3 border border-white/5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <BookOpen className="w-3 h-3 text-gray-500" />
+                      <p className="text-gray-500 text-xs font-semibold">Instructions:</p>
+                    </div>
+                    <p className="text-gray-400 text-xs leading-relaxed whitespace-pre-line">
+                      {command.instructions}
+                    </p>
+                  </div>
+                )}
+              </motion.div>
+            )}
+          </>
+        )}
       </div>
     </motion.div>
   );

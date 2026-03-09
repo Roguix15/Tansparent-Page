@@ -1,14 +1,12 @@
 const ping = {
   id: "ping",
-  name: "Ping",
-  description: "Check bot latency",
-  category: "utilities",
+  name: "ping",
+  description: "Check bot latency and response time",
+  category: "information",
   usage: "/ping",
-  examples: ["/ping"],
-  instructions: `
-This command checks the bot latency.
-Simply run /ping and the bot will respond.
-`,
+  arguments: null, // No tiene argumentos
+  instructions: null, // No necesita instrucciones adicionales
+  videoUrl: null, // No tiene video tutorial
 };
 
 export default ping;

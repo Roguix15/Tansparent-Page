@@ -6,18 +6,19 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { 
   Search, Palette, RefreshCw, Sparkles, 
-  Film, Type, Wrench, Info 
+  Film, Type, Wrench, Info, Settings as SettingsIcon, Sliders
 } from 'lucide-react';
 
 const categories = [
-  { id: 'all', name: 'All', icon: Sparkles },
-  { id: 'color_adjustments', name: 'Color & Adjustments', icon: Palette },
-  { id: 'transformations', name: 'Transformations', icon: RefreshCw },
-  { id: 'visual_effects', name: 'Visual Effects', icon: Sparkles },
-  { id: 'animations', name: 'Animations', icon: Film },
-  { id: 'text_overlay', name: 'Text & Overlay', icon: Type },
-  { id: 'utilities', name: 'Utilities', icon: Wrench },
-  { id: 'information', name: 'Information', icon: Info },
+  { id: 'all', name: 'All', icon: Sparkles, color: 'indigo' },
+  { id: 'color', name: 'Color', icon: Palette, color: 'orange' },
+  { id: 'adjustments_effects', name: 'Adjustments & Effects', icon: Sliders, color: 'purple' },
+  { id: 'transformations', name: 'Transformations', icon: RefreshCw, color: 'blue' },
+  { id: 'animations', name: 'Animations', icon: Film, color: 'pink' },
+  { id: 'text_overlay', name: 'Text & Overlay', icon: Type, color: 'green' },
+  { id: 'utilities', name: 'Utilities', icon: Wrench, color: 'cyan' },
+  { id: 'settings', name: 'Settings', icon: SettingsIcon, color: 'gray' },
+  { id: 'information', name: 'Information', icon: Info, color: 'slate' },
 ];
 
 export default function Commands() {

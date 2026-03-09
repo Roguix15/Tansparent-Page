@@ -9,21 +9,21 @@ import {
 const features = [
   {
     icon: Palette,
-    title: "Color & Adjustments",
-    description: "Modify hues, saturation, brightness, contrast and more. Fine-tune every aspect of your images.",
+    title: "Color",
+    description: "Change colors, create gradients, and animate colors transitions. Full control over specific area and replacements.",
     color: "from-orange-500 to-red-500"
+  },
+  {
+    icon: Sparkles,
+    title: "Adjustments & Effects",
+    description: "Adjust brightness, contrast, sharpness, and apply stunning filters. From vintage to modern creative effects.",
+    color: "from-purple-500 to-pink-500"
   },
   {
     icon: RefreshCw,
     title: "Transformations",
     description: "Rotate, flip, scale, crop and resize images with precision. Perfect dimensions every time.",
     color: "from-blue-500 to-cyan-500"
-  },
-  {
-    icon: Sparkles,
-    title: "Visual Effects",
-    description: "Apply stunning filters and creative effects. From vintage to modern, express your style.",
-    color: "from-purple-500 to-pink-500"
   },
   {
     icon: Film,
@@ -41,7 +41,7 @@ const features = [
     icon: Wrench,
     title: "Utilities & Tools",
     description: "Quick shortcuts and powerful tools for common tasks. Streamline your workflow.",
-    color: "from-indigo-500 to-violet-500"
+    color: "from-purple-500 to-violet-500"
   }
 ];
 
