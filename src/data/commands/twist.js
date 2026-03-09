@@ -17,7 +17,7 @@ const twist = {
     },
     {
       name: "expand",
-      description: "Expand frame while spinning?",
+      description: "Expand frame while twisting?",
       required: true,
     },
     {

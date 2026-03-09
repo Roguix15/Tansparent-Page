@@ -7,7 +7,7 @@ const rotate = {
   arguments: [
     {
       name: "degrees",
-      description: "Degrees to rotate the image (-360 to 360)",
+      description: "Degrees to rotate the image (-360-360)",
       required: true,
     },
     {
